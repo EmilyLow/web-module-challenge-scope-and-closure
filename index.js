@@ -129,39 +129,34 @@ function scoreboard(cb, innNum) {
     "Home": 0,
     "Away": 0,
   }
-
+  let scoreArray = [];
   // Looks outward for score and then increases appropriate amount and returns
   
-  const singleInning = (i) => {
+  for (let i = 1; i <= innNum; i++) {
       score["Home"] += cb();
       score["Away"] += cb();
+      //Create the sentence
       if (i === 1) {
-        return `1st inning: ${score["Home"]} - ${score["Away"]}`;
+        scoreArray.push(`1st inning: ${score["Home"]} - ${score["Away"]}`);
       }
       else if(i ===2) {
-        return `2nd inning: ${score["Home"]} - ${score["Away"]}`;
+        scoreArray.push( `2nd inning: ${score["Home"]} - ${score["Away"]}`);
       }
       else if(i ===3) {
-        return `3rd inning: ${score["Home"]} - ${score["Away"]}`;
+        scoreArray.push( `3rd inning: ${score["Home"]} - ${score["Away"]}`);
       }
       else {
-        return `${i}th inning: ${score["Home"]} - ${score["Away"]}`;
+        scoreArray.push( `${i}th inning: ${score["Home"]} - ${score["Away"]}`);
       }
 
     }
-      
-    for (let i = 1; i <= innNum; i++) {
-      //This causes singleInning to return the correct strings but not for the overall scoreBoard to do so.
-      singleInning(i);
-      console.log(singleInning(i));
-      
-    }
-  
-    return `Final Score: ${score["Home"]} - ${score["Away"]}`
+   
+
+    scoreArray.push(`Final Score: ${score["Home"]} - ${score["Away"]}`);
+    return scoreArray;
 }
 
-
+//Should you be returning instead of storing in array?
 
 console.log(scoreboard(inning,9));
-
 
