@@ -90,7 +90,7 @@ function finalScore(cb, innNum){
     "Away": 0,
   }
 
-  for (let i = 0; i <=innNum; i++) {
+  for (let i = 0; i <innNum; i++) {
     score["Home"] += cb();
     score["Away"] += cb();
 
@@ -130,16 +130,33 @@ function scoreboard(cb, innNum) {
     "Away": 0,
   }
 
-  // Looks outward for score and then increases appropriate amount and returns?
+  // Looks outward for score and then increases appropriate amount and returns
   
-    runInning (currentInning) {
+  for(let i = 1; i <= innNum; i++ ) {
+    console.log(i);
       score["Home"] += cb();
       score["Away"] += cb();
-      return ``
+      if (i === 1) {
+        return `1st inning: ${score["Home"]} - ${score["Away"]}`;
+      }
+      else if(i ===2) {
+        return `2nd inning: ${score["Home"]} - ${score["Away"]}`;
+      }
+      else if(i ===3) {
+        return `3rd inning: ${score["Home"]} - ${score["Away"]}`;
+      }
+      else {
+        return `${i}th inning: ${score["Home"]} - ${score["Away"]}`;
+      }
     }
-  
+      
+  return `Final Score: ${score["Home"]} - ${score["Away"]}`;
 
 
 }
+
+
+
+console.log(scoreboard(inning,9));
 
 
