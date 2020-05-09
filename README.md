@@ -74,8 +74,7 @@ b. Compare and contrast calling `dansRoll` the first and second time. What is al
 
 c. What is the lexical scope of `newRoll`? 
 
-  It can access everything outside of itself, so it can access everything in the returned function and everything in personalDice. 
-
+  Function scope 
 
 ### Task 3 - Stretch Goals
 

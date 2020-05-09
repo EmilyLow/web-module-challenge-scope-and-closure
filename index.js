@@ -94,9 +94,10 @@ function finalScore(cb, innNum){
     score["Home"] += cb();
     score["Away"] += cb();
 
+    
   }
 
-  return score;
+  return score; 
 
 }
 
@@ -129,13 +130,15 @@ function scoreboard(cb, innNum) {
     "Home": 0,
     "Away": 0,
   }
+
   let scoreArray = [];
-  // Looks outward for score and then increases appropriate amount and returns
+  
   
   for (let i = 1; i <= innNum; i++) {
       score["Home"] += cb();
       score["Away"] += cb();
-      //Create the sentence
+      
+
       if (i === 1) {
         scoreArray.push(`1st inning: ${score["Home"]} - ${score["Away"]}`);
       }
@@ -156,7 +159,7 @@ function scoreboard(cb, innNum) {
     return scoreArray;
 }
 
-//Should you be returning instead of storing in array?
+
 
 console.log(scoreboard(inning,9));
 
