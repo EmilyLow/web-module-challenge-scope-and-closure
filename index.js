@@ -150,14 +150,14 @@ function scoreboard(cb, innNum) {
 
     }
       
-    for (let i = 0; i <innNum; i++) {
+    for (let i = 1; i <= innNum; i++) {
       //This causes singleInning to return the correct strings but not for the overall scoreBoard to do so.
       singleInning(i);
-      //console.log(singleInning(i));
+      console.log(singleInning(i));
       
     }
   
-
+    return `Final Score: ${score["Home"]} - ${score["Away"]}`
 }
 
 
