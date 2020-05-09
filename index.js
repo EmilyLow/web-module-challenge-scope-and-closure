@@ -132,8 +132,7 @@ function scoreboard(cb, innNum) {
 
   // Looks outward for score and then increases appropriate amount and returns
   
-  for(let i = 1; i <= innNum; i++ ) {
-    console.log(i);
+  const singleInning = (i) => {
       score["Home"] += cb();
       score["Away"] += cb();
       if (i === 1) {
@@ -151,8 +150,13 @@ function scoreboard(cb, innNum) {
 
     }
       
-  return `Final Score: ${score["Home"]} - ${score["Away"]}`;
-
+    for (let i = 0; i <innNum; i++) {
+      //This causes singleInning to return the correct strings but not for the overall scoreBoard to do so.
+      singleInning(i);
+      //console.log(singleInning(i));
+      
+    }
+  
 
 }
 
