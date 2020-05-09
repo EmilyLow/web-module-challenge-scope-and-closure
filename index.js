@@ -148,6 +148,7 @@ function scoreboard(cb, innNum) {
       else {
         return `${i}th inning: ${score["Home"]} - ${score["Away"]}`;
       }
+
     }
       
   return `Final Score: ${score["Home"]} - ${score["Away"]}`;

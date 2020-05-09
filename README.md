@@ -42,6 +42,9 @@ Find the file `index.js` and complete the tasks.
 Edit the `ReadMe` file with your answers.
 
 1. In your own words, define closure (1-2 sentences).
+
+Closure is when an internal unit (such as a function or loop) utilizes a variable from outside its scope. 
+
 2. Study the following code, then answer the questions below.
 
 ```js
@@ -62,9 +65,17 @@ dansRoll();
 dansRoll();
 ```
 
-a. Where is closure used in this code? How can you tell?
+
+  When the returned function utilizes 'name'. You can tell because name is a variable not initialzed within the internal returned function. 
+  
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+  
+  The input variable name ("Dan") is always the same. The result of the roll could change, due to its random nature.
+
 c. What is the lexical scope of `newRoll`? 
+
+  It can access everything outside of itself, so it can access everything in the returned function and everything in personalDice. 
+
 
 ### Task 3 - Stretch Goals
 
